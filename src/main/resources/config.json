@@ -1,0 +1,20 @@
+[
+  {
+    "id" : 1,
+    "mode": "dir",
+    "paths": ["/home/user"],
+    "action": "string"
+  },
+  {
+    "id": 3,
+    "mode": "files",
+    "paths": ["/home/user"],
+    "action": "count"
+  },
+  {
+    "id": 7,
+    "mode": "files",
+    "paths": ["/home/user"],
+    "action": "replace"
+  }
+]
