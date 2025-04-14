@@ -1,0 +1,37 @@
+{
+  "configFilePath": "src/main/resources/config.json",
+  "configurationData": {
+    "mode": "DIR",
+    "paths": [
+      "file:///C:/Users/maksi/IdeaProjects/aquarius-test-task/testdir/in/dir2/"
+    ],
+    "action": "COUNT"
+  },
+  "configurationId": 2,
+  "results": [
+    [
+      "2",
+      "2",
+      "2",
+      "2"
+    ],
+    [
+      "2",
+      "2",
+      "2",
+      "2"
+    ],
+    [
+      "2",
+      "0",
+      "2",
+      "2"
+    ],
+    [
+      "0",
+      "0",
+      "2",
+      "0"
+    ]
+  ]
+}

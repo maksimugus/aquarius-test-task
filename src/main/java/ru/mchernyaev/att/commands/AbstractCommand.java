@@ -20,6 +20,8 @@ public abstract class AbstractCommand implements FileCommand {
                     var line = stream.findFirst().orElse("");
                     if (!line.isEmpty()) found = true;
                     lines.add(preprocess(line, i));
+                } catch (IOException e) {
+                    throw new RuntimeException("Unable to open file " + path.toString(), e);
                 }
             }
             if (!found) break;

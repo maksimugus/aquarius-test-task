@@ -1,0 +1,25 @@
+{
+  "configFilePath": "src/main/resources/config.json",
+  "configurationData": {
+    "mode": "DIR",
+    "paths": [
+      "file:///C:/Users/maksi/IdeaProjects/aquarius-test-task/testdir/in/dir2/dir4/"
+    ],
+    "action": "REPLACE"
+  },
+  "configurationId": 3,
+  "results": [
+    [
+      "First line",
+      "First line"
+    ],
+    [
+      "Se3ond line",
+      "Se4ond line"
+    ],
+    [
+      "Third line",
+      ""
+    ]
+  ]
+}

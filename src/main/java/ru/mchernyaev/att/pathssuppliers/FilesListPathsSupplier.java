@@ -13,7 +13,7 @@ public class FilesListPathsSupplier extends AbstractPathsSupplier {
     @Override
     public List<Path> getPaths() throws NoSuchFileException {
         var nonexistent_file = paths.stream()
-                .filter(Files::exists)
+                .filter(Files::notExists)
                 .findFirst();
         if (nonexistent_file.isEmpty()) {
             return paths;

@@ -19,7 +19,7 @@ public class DirectoryPathsSupplier extends AbstractPathsSupplier {
             throw new InvalidConfigException("Ambiguous directory name");
         }
         try (var stream = Files.walk(paths.getFirst())) {
-            return stream.toList();
+            return stream.filter(Files::isRegularFile).toList();
         }
     }
 }

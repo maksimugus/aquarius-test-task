@@ -1,5 +1,6 @@
 package ru.mchernyaev.att.pathssuppliers;
 
+import org.springframework.stereotype.Component;
 import ru.mchernyaev.att.models.Mode;
 
 import java.nio.file.Path;
@@ -7,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class PathsSupplierFactoryImpl implements PathsSupplierFactory {
     private final Map<Mode, PathsSupplier> strategies;
 
