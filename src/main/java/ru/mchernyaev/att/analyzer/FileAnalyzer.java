@@ -1,5 +1,8 @@
 package ru.mchernyaev.att.analyzer;
 
+import java.io.IOException;
+import java.util.List;
+
 public interface FileAnalyzer {
-    String analyze();
+    List<List<String>> analyze() throws IOException;
 }

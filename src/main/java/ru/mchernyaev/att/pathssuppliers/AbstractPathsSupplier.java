@@ -1,4 +1,4 @@
-package ru.mchernyaev.att.strategies;
+package ru.mchernyaev.att.pathssuppliers;
 
 import java.nio.file.Path;
 import java.util.List;

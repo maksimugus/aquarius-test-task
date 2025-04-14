@@ -1,11 +1,11 @@
 package ru.mchernyaev.att.commands;
 
-import java.nio.file.Path;
-import java.util.List;
+public class ReplaceCommand extends AbstractCommand {
 
-public class ReplaceCommand implements FileCommand {
     @Override
-    public void execute(List<Path> files) {
-
+    protected String preprocess(String line, int fileNumber) {
+        return line.replace("a", String.valueOf(1 + fileNumber))
+                .replace("b", String.valueOf(2 + fileNumber))
+                .replace("c", String.valueOf(3 + fileNumber));
     }
 }

@@ -1,4 +1,4 @@
-package ru.mchernyaev.att.strategies;
+package ru.mchernyaev.att.pathssuppliers;
 
 import ru.mchernyaev.att.models.Mode;
 
@@ -6,5 +6,5 @@ import java.nio.file.Path;
 import java.util.List;
 
 public interface PathsSupplierFactory {
-    PathsSupplier getStrategy(Mode mode, List<Path> paths);
+    PathsSupplier getSupplier(Mode mode, List<Path> paths);
 }

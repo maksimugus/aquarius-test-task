@@ -1,4 +1,4 @@
-package ru.mchernyaev.att.strategies;
+package ru.mchernyaev.att.pathssuppliers;
 
 import ru.mchernyaev.att.models.Mode;
 
@@ -15,7 +15,7 @@ public class PathsSupplierFactoryImpl implements PathsSupplierFactory {
     }
 
     @Override
-    public PathsSupplier getStrategy(Mode mode, List<Path> paths) {
+    public PathsSupplier getSupplier(Mode mode, List<Path> paths) {
         return strategies.computeIfAbsent(mode, m -> createStrategy(mode, paths));
     }
 

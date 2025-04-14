@@ -1,15 +1,33 @@
 package ru.mchernyaev.att.analyzer;
 
 import lombok.RequiredArgsConstructor;
+import ru.mchernyaev.att.commands.CommandFactory;
+import ru.mchernyaev.att.commands.FileCommand;
 import ru.mchernyaev.att.models.Configuration;
-import ru.mchernyaev.att.strategies.StrategyFactory;
+import ru.mchernyaev.att.pathssuppliers.PathsSupplier;
+import ru.mchernyaev.att.pathssuppliers.PathsSupplierFactory;
 
 @RequiredArgsConstructor
 public class Configurator {
-    private final Configuration configuration;
-    private final StrategyFactory strategyFactory;
+    private final PathsSupplierFactory pathsSupplierFactory;
+    private final CommandFactory commandFactory;
 
-    public void configure(FileAnalyzerImpl.Builder builder) {
-        builder.strategy(strategyFactory.getStrategy(configuration.mode()));
+    public void configure(
+            Configuration configuration,
+            FileAnalyzerImpl.Builder builder
+    ) {
+        builder.pathsSupplier(getSupplier(configuration))
+                .command(getCommand(configuration));
+    }
+
+    private PathsSupplier getSupplier(Configuration configuration) {
+        return pathsSupplierFactory.getSupplier(
+                configuration.mode(),
+                configuration.paths()
+        );
+    }
+
+    private FileCommand getCommand(Configuration configuration) {
+        return commandFactory.getCommand(configuration.action());
     }
 }

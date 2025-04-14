@@ -1,11 +1,10 @@
 package ru.mchernyaev.att.commands;
 
-import java.nio.file.Path;
-import java.util.List;
+public class CountCommand extends AbstractCommand {
 
-public class CountCommand implements FileCommand {
     @Override
-    public void execute(List<Path> files) {
-
+    protected String preprocess(String line, int fileNumber) {
+        if (line.isEmpty()) return "0";
+        return String.valueOf(line.split("\\s+").length);
     }
 }

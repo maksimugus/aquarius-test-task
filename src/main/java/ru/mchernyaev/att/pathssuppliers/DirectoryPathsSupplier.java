@@ -1,4 +1,4 @@
-package ru.mchernyaev.att.strategies;
+package ru.mchernyaev.att.pathssuppliers;
 
 import ru.mchernyaev.att.exceptions.InvalidConfigException;
 

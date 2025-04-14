@@ -1,9 +1,10 @@
-package ru.mchernyaev.att.analyzer;
+package ru.mchernyaev.att.parser;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.json.JsonMapper;
+import lombok.RequiredArgsConstructor;
 import ru.mchernyaev.att.exceptions.InvalidArgumentsNumberException;
 import ru.mchernyaev.att.models.Configuration;
 
@@ -16,14 +17,9 @@ import java.util.List;
 
 import static java.nio.file.Files.newBufferedReader;
 
-public class ConfigParser {
+@RequiredArgsConstructor
+public class ConfigParserImpl implements ConfigParser {
     private final ObjectMapper objectMapper;
-
-    public ConfigParser() {
-        objectMapper = JsonMapper.builder()
-                .enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_ENUMS)
-                .build();
-    }
 
     public Configuration parse(String[] args) throws NoSuchFileException {
         if (args.length != 2) {
